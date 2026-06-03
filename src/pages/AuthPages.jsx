@@ -120,10 +120,10 @@ export function LoginPage() {
         Don't have an account?{' '}
         <Link to="/register" className="text-brand-600 font-semibold hover:underline">Create one</Link>
       </p>
-      <div className="mt-5 p-4 rounded-xl bg-brand-50 border border-brand-100 text-xs text-ink-500">
+      {/* <div className="mt-5 p-4 rounded-xl bg-brand-50 border border-brand-100 text-xs text-ink-500">
         <p className="font-semibold text-brand-700 mb-1">Demo credentials</p>
         <p>Admin: <span className="font-mono text-ink-700">admin@cartato.store</span> / <span className="font-mono text-ink-700">Admin@123</span></p>
-      </div>
+      </div> */}
     </AuthLayout>
   )
 }
