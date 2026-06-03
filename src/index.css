@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ─────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a; }
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 3px; }
+
+/* ── Skeleton ──────────────────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.625rem 1.25rem; background: #2563eb; color: #fff;
+  font-weight: 600; border-radius: 0.75rem; font-size: 0.875rem;
+  transition: all 0.15s; border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(59,130,246,0.30);
+}
+.btn-primary:hover { background: #1d4ed8; box-shadow: 0 6px 24px rgba(59,130,246,0.40); transform: translateY(-1px); }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.625rem 1.25rem; background: #fff; color: #334155;
+  font-weight: 600; border-radius: 0.75rem; font-size: 0.875rem;
+  border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.btn-secondary:hover { background: #f8fafc; border-color: #cbd5e1; transform: translateY(-1px); }
+.btn-secondary:active { transform: scale(0.98); }
+
+.btn-danger {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.625rem 1.25rem; background: #dc2626; color: #fff;
+  font-weight: 600; border-radius: 0.75rem; font-size: 0.875rem;
+  border: none; cursor: pointer; transition: all 0.15s;
+}
+.btn-danger:hover { background: #b91c1c; transform: translateY(-1px); }
+.btn-danger:active { transform: scale(0.98); }
+.btn-danger:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.5rem 1rem; color: #475569;
+  font-weight: 500; border-radius: 0.75rem; font-size: 0.875rem;
+  background: transparent; border: none; cursor: pointer; transition: all 0.15s;
+}
+.btn-ghost:hover { color: #2563eb; background: #eff6ff; }
+
+/* ── Cards ─────────────────────────────────────────────────────────────── */
+.card {
+  background: #fff; border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+}
+.card-hover { transition: all 0.2s; }
+.card-hover:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.shadow-card-md { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.shadow-card-lg { box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
+.shadow-brand   { box-shadow: 0 4px 20px rgba(59,130,246,0.30); }
+
+/* ── Input ─────────────────────────────────────────────────────────────── */
+.input {
+  width: 100%; padding: 0.625rem 1rem; background: #fff;
+  border: 1px solid #e2e8f0; border-radius: 0.75rem; color: #0f172a;
+  font-size: 0.875rem; font-family: inherit; transition: all 0.15s; outline: none;
+}
+.input::placeholder { color: #94a3b8; }
+.input:focus { border-color: #60a5fa; box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+
+/* ── Badges ─────────────────────────────────────────────────────────────── */
+.badge        { display: inline-flex; align-items: center; padding: 0.125rem 0.625rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+.badge-blue   { background: #eff6ff; color: #1d4ed8; }
+.badge-green  { background: #f0fdf4; color: #15803d; }
+.badge-yellow { background: #fffbeb; color: #b45309; }
+.badge-red    { background: #fef2f2; color: #dc2626; }
+.badge-gray   { background: #f1f5f9; color: #475569; }
+.badge-purple { background: #faf5ff; color: #7e22ce; }
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+.section-title { font-family: 'Sora', system-ui, sans-serif; font-weight: 700; font-size: clamp(1.75rem, 4vw, 2.5rem); color: #0f172a; line-height: 1.2; }
+.section-sub   { color: #64748b; font-size: 1rem; line-height: 1.6; }
+
+/* ── Table ──────────────────────────────────────────────────────────────── */
+.tbl { width: 100%; font-size: 0.875rem; border-collapse: collapse; }
+.tbl thead tr { border-bottom: 1px solid #e2e8f0; }
+.tbl thead th { padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+.tbl tbody tr { border-bottom: 1px solid #f1f5f9; transition: background 0.1s; }
+.tbl tbody tr:hover { background: #f8fafc; }
+.tbl tbody td { padding: 0.875rem 1rem; color: #334155; }
+
+/* ── Print styles for invoice ────────────────────────────────────────────── */
+@media print {
+  body * { visibility: hidden; }
+  #invoice-print, #invoice-print * { visibility: visible; }
+  #invoice-print { position: fixed; inset: 0; background: white; padding: 32px; }
+  .no-print { display: none !important; }
+}
